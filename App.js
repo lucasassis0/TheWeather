@@ -51,17 +51,17 @@ export default function App() {
       </View>
       <View style={{ flex: 3, display: dp }}>
         <View style={styles.stats}>
-          <Card title={city} text={temp + 'ºC'} />
+          <Card title={city} text={temp.toFixed(1) + 'ºC'} />
         </View>
         <View style={{ borderColor: '#c8c8c8', borderWidth: 1, marginHorizontal: 30 }} />
         <View style={styles.stats}>
-          <Card title='Min/Máx' text={min + 'ºC/' + max + 'ºC'} />
-          <Card title="Sensação Térmica" text={fl + "ºC"} />
+          <Card title='Min/Máx' text={min.toFixed(1) + 'ºC/' + max.toFixed(1) + 'ºC'} />
+          <Card title="Sensação Térmica" text={fl.toFixed(1) + "ºC"} />
         </View>
         <View style={{ borderColor: '#c8c8c8', borderWidth: 1, marginHorizontal: 30 }} />
         <View style={styles.stats}>
           <Card title="Humidade" text={humidity + "%"} />
-          <Card title="Velocidade do vento" text={ws + " km/h"} />
+          <Card title="Velocidade do vento" text={ws.toFixed(1) + " km/h"} />
         </View>
       </View>
       <StatusBar style="auto" />
