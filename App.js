@@ -45,7 +45,7 @@ export default function App() {
       </View>
       <View style={styles.containerButton}>
         <Button
-          title="Update"
+          title="Atualizar"
           onPress={() => { getData() }}
         />
       </View>
@@ -55,13 +55,13 @@ export default function App() {
         </View>
         <View style={{ borderColor: '#c8c8c8', borderWidth: 1, marginHorizontal: 30 }} />
         <View style={styles.stats}>
-          <Card title='Min/Max' text={min + 'ºC/' + max + 'ºC'} />
-          <Card title="Feels like" text={fl + "ºC"} />
+          <Card title='Min/Máx' text={min + 'ºC/' + max + 'ºC'} />
+          <Card title="Sensação Térmica" text={fl + "ºC"} />
         </View>
         <View style={{ borderColor: '#c8c8c8', borderWidth: 1, marginHorizontal: 30 }} />
         <View style={styles.stats}>
-          <Card title="Humidity" text={humidity + "%"} />
-          <Card title="Wind Speed" text={ws + " km/h"} />
+          <Card title="Humidade" text={humidity + "%"} />
+          <Card title="Velocidade do vento" text={ws + " km/h"} />
         </View>
       </View>
       <StatusBar style="auto" />
