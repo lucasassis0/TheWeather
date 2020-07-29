@@ -1,22 +1,68 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Image } from 'react-native';
 import Button from './src/components/Button';
 import styles from './src/styles/styles';
-import getData from './src/functions/getData'
+import Card from './src/components/Card'
+import logo from './src/img/logo_size.jpg'
+import { apiData } from './src/api/apiData'
 
 export default function App() {
+  const [city, setCity] = useState('')
+  const [temp, setTemp] = useState(0)
+  const [fl, setFl] = useState(0)
+  const [min, setMin] = useState(0)
+  const [max, setMax] = useState(0)
+  const [humidity, setHumidity] = useState(0)
+  const [ws, setWs] = useState(0)
+  const [dp, setDp] = useState('none')
+  
+  const getData = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async function (position) {
+        const lat = await position.coords.latitude
+        const lon = await position.coords.longitude
+        const res = await apiData(lat, lon)
+        const result = res.data
+        const { name, main, wind } = result
+
+        setCity(name)
+        setTemp(main.temp - 273.15)
+        setFl(main.feels_like - 273.15)
+        setHumidity(main.humidity)
+        setMax(main.temp_max - 273.15)
+        setMin(main.temp_min - 273.15)
+        setWs(wind.speed * 3.6)
+        setDp('flex')
+      });
+    }
+  }
 
   return (
     <View style={styles.container}>
-      <View style={styles.containerInput}>
+      <View style={styles.containerLogo}>
+        <Image style={styles.logo} source={logo} />
+      </View>
+      <View style={styles.containerButton}>
         <Button
-          title="Atualizar"
+          title="Update"
           onPress={() => { getData() }}
         />
       </View>
-      <View style={{ flex: 2 }}>
-        <Text>The Weather</Text>
+      <View style={{ flex: 3, display: dp }}>
+        <View style={styles.stats}>
+          <Card title={city} text={temp + 'ºC'} />
+        </View>
+        <View style={{ borderColor: '#c8c8c8', borderWidth: 1, marginHorizontal: 30 }} />
+        <View style={styles.stats}>
+          <Card title='Min/Max' text={min + 'ºC/' + max + 'ºC'} />
+          <Card title="Feels like" text={fl + "ºC"} />
+        </View>
+        <View style={{ borderColor: '#c8c8c8', borderWidth: 1, marginHorizontal: 30 }} />
+        <View style={styles.stats}>
+          <Card title="Humidity" text={humidity + "%"} />
+          <Card title="Wind Speed" text={ws + " km/h"} />
+        </View>
       </View>
       <StatusBar style="auto" />
     </View>
