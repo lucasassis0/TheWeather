@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import styles from '../styles/styles'
 
 export default function Botao(props) {
