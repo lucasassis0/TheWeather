@@ -4,7 +4,8 @@ Um app que utiliza da localização do usuário para consumir uma api e expor o 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
+ <a href="#usando">Usando</a> • 
+ <a href="#contribuição">Contribuição</a> • 
  <a href="#licença">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
@@ -17,6 +18,15 @@ A aplicação tem como objetivo fazer com que o usuário tenha acesso instantân
 <p>• <a href="https://reactnative.dev/">React Native</a></p>
 <p>• <a href="https://expo.io/">Expo</a></p>
 <p>• <a href="https://github.com/axios/axios">Axios</a></p>
+
+# Usando
+<p>No terminal, clone o projeto:<p>
+<p>• git clone https://github.com/lucasassis0/TheWeather.git<p>
+<p>Instale as dependencias:<p>
+<p>• npm install<p>
+<p>Execute a aplicação:<p>
+<p>• npm start<p>
+<p>OBS: Se a aplicação iniciar com o Expo, escolha entre abrir em Android, IOS ou browser (Para rodar no celular, use o QR Code).<p>
 
 # Contribuição
 <p>Eu tenho muito a agradecer e para muitos que me ajudaram até que eu pudesse chegar no meu grau de conhecimento atual, porém dizendo em relação a esse projeto específico tive algumas pessoas que me auxiliaram para que eu pudesse finalizar o projeto as quais eu devo mencionar...<p>
