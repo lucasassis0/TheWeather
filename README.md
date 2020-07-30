@@ -35,7 +35,7 @@ A aplicação tem como objetivo fazer com que o usuário tenha acesso instantân
 <p>• <a href="https://www.linkedin.com/in/henriquebrumatti/">Henrique Brumatti</a><p>
 
 # Licença
-<img src="https://img.shields.io/github/license/lucasassis0/TheWeather" >
+<a href="https://github.com/lucasassis0/TheWeather/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/lucasassis0/TheWeather"></a>
 
 # Autor
 
